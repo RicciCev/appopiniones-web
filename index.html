@@ -117,7 +117,7 @@
                             <h3 class="card-title font-weight-bold">GitHub project</h3>
                             <p class="card-text">Proyecto de código abierto y gratuito.
                             </p>
-                            <a href="https://github.com/masamicev/appopiniones-frontend" target="_blank"
+                            <a href="https://github.com/Spyrion/appopiniones-frontend" target="_blank"
                                 class="btn-shrink btn-primary btn-block rounded-pill"><i class="fab fa-github"></i> GITHUB</a>
                         </div>
                     </div>
@@ -130,30 +130,30 @@
             <h2 class="contacto-title">Contacto</h2>
             <div class="row">
                 <section class="col-12">
-                    <form>
+                    <form method="post" action="index-contact.php">
                         <div class="form-group">
                             <label for="inputName">Nombre</label>
-                            <input type="text" class="form-control" id="name">
+                            <input type="text" class="form-control" id="Name" required>
                         </div>
                         <div class="form-group">
                             <label for="inputLastName">Apellidos</label>
-                            <input type="text" class="form-control" id="lastName">
+                            <input type="text" class="form-control" id="Surname" required>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputEmail4">Correo electrónico</label>
                                 <i class="far fa-envelope"></i>
-                                <input type="email" class="form-control" id="inputEmail4">
+                                <input type="email" class="form-control" id="Email" placeholder="username@email.com" required>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputPassword4">Número de teléfono (opcional)</label>
                                 <i class="fas fa-mobile-alt"></i>
-                                <input type="number" class="form-control" id="inputPassword4">
+                                <input type="number" class="form-control" id="inputPhone">
                             </div>
                         </div>
                         <div class="form-group">
                             <label>Mensaje <i class="far fa-comments"></i></label>
-                            <textarea type="text" name="message" id="message" rows="10" class="form-control"></textarea>
+                            <textarea type="text" name="message" id="Message" rows="10" class="form-control" required></textarea>
                         </div>
                         <div class="form-group text-center">
                             <button type="submit" class="btn-underline btn-primary rounded-lg">Enviar</button>
