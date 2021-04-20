@@ -16,17 +16,21 @@ if (
         $name = $_POST['name'];
         $lastName = $_POST['lastName'];
         $email = $_POST['email'];
-        $message = $_POST['messsage'];
+        $message = $_POST['message'];
         $phoneNum = $_POST['phoneNum'];
 
+        // Establecer una variable con el correo que recibe los datos del formulario (en el futuro lo cambiaré por un array de correos de todos los miembros del grupo).
         $mail_recipient = "ricardo_christmann_apps1oa1920@cev.com";
         $body = '';
 
+        // La variable body se encarga de mostrar los varios datos del formulario de una manera sencilla.
         $body .= "From: " . $name . " " . $lastName . "\r\n";
         $body .= "Phone number: " . $phoneNum . "\r\n";
         $body .= "Email: " . $email . "\r\n";
         $body .= "Message: " . $message . "\r\n";
 
+        // Método que envía los datos al correo recipiente, con un sujeto/asunto y un body que es donde se muestran los datos del formulario.
+        // Para que este método funcione es necesario tener un mail server instalado, por eso lo publicaré en un web server gratuito que ya lo tiene incluido.
         mail($mail_recipient, "Subject: ", $body);
 
         $message_sent = true;
@@ -38,6 +42,7 @@ if (
 if ($message_sent) :
 ?>
 
+    <!-- Si el mensaje fue enviado correctamente mostramos una página expresando las gracias con código html simple. -->
     <!DOCTYPE html>
     <html lang="en">
 
