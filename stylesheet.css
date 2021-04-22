@@ -2,10 +2,18 @@
   box-sizing: border-box;
 }
 
+/* VARIABLES CSS */
+:root {
+  --bg-color: #282a36;
+  --text-color: #f8f8f2;
+  --card-bg-color: #44475a;
+  --footer-bg-color: rgba(0, 0, 0, 0.4);
+}
+
 /* TEMA COLOR */
 .site-bg {
-  background-color: #282a36;
-  color: #f8f8f2;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 .container {
@@ -15,6 +23,14 @@
 .center {
   text-align: center;
   width: 100%;
+}
+
+.flex-center {
+  /* flex permite crear una columna o fila flexible en la interfaz.  */
+  display: flex;
+  justify-content: center;  /* Main Axis X */
+  align-items: center;  /* Cross Axis Y */
+  flex-direction: column;
 }
 
 .home-title {
@@ -27,7 +43,7 @@
 
 .features-title,
 .downloads-title,
-.contacto-title {
+.contact-title {
   margin-top: 25px;
   margin-bottom: 25px;
   font-size: 40px;
@@ -36,15 +52,13 @@
 }
 
 img {
-  max-width: 100%;
-  height: auto;
   padding: 5px;
   border-radius: 10px;
 }
 
 .custom-card {
   margin: 0 auto;
-  background-color: #44475a;
+  background-color: var(--card-bg-color);
   border-radius: 40px;
 }
 
@@ -52,16 +66,18 @@ a:link{
   text-decoration: none!important;
 }
 
+.form-control {
+	color: #3d4144;
+}
+
 /* Debería cambiar el color de los bordes del formulario de contacto pero no lo hace. */
-/*
 .form-control:focus {
     border-color: #28a745;
     box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
 } 
-*/
 
 .footer-bg {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: var(--footer-bg-color);
 }
 
 /* BOTONES Y EFECTOS HOVER. */
