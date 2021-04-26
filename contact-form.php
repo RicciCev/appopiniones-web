@@ -1,5 +1,14 @@
 <?php
+// Importar librerías de PHPMailer.
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 
+require 'PHPMailer/PHPMailer.php';
+require 'PHPMailer/SMTP.php';
+require 'PHPMailer/Exception.php';
+
+// Variable para verificar si el mensaje se ha enviado o no.
 $message_sent = false;
 
 // Comprobar que los campos obligatorios están rellenados.
@@ -7,6 +16,7 @@ if (
     isset($_POST['email']) && $_POST['email'] != '' &&
     isset($_POST['name']) && $_POST['name'] != '' &&
     isset($_POST['lastName']) && $_POST['lastName'] != '' &&
+    isset($_POST['subject']) && $_POST['subject'] != '' &&
     isset($_POST['message']) && $_POST['message'] != ''
 ) {
 
@@ -16,29 +26,62 @@ if (
         $name = $_POST['name'];
         $lastName = $_POST['lastName'];
         $email = $_POST['email'];
-        $message = $_POST['message'];
         $phoneNum = $_POST['phoneNum'];
+        $subject = $_POST['subject'];
+        $message = $_POST['message'];
 
-        // Establecer una variable con el correo que recibe los datos del formulario (en el futuro lo cambiaré por un array de correos de todos los miembros del grupo).
-        $mail_recipient = "ricardo_christmann_apps1oa1920@cev.com";
+        // Tu correo de gmail.
+        $mail_recipient = "";
         $body = '';
 
         // La variable body se encarga de mostrar los varios datos del formulario de una manera sencilla.
         $body .= "From: " . $name . " " . $lastName . "\r\n";
-        $body .= "Phone number: " . $phoneNum . "\r\n";
-        $body .= "Email: " . $email . "\r\n";
-        $body .= "Message: " . $message . "\r\n";
+        $body .= "\r\n" . "Phone number: " . $phoneNum . "\r\n";
+        $body .= "\r\n" . "Email: " . $email . "\r\n";
+        $body .= "\r\n" . "Message: " . $message . "\r\n";
 
-        // Método que envía los datos al correo recipiente, con un sujeto/asunto y un body que es donde se muestran los datos del formulario.
-        // Para que este método funcione es necesario tener un mail server instalado, por eso lo publicaré en un web server gratuito que ya lo tiene incluido.
-        mail($mail_recipient, "Subject: ", $body);
+        // Instanciamos PHPMailer y pasamos true para activar las excepciones.
+        $mail = new PHPMailer(true);
 
-        $message_sent = true;
+        // Try catch para manejar las excepciones que puedan ocurrir.
+        try {
+            // AJUSTES SMTP.
+            // Enviamos usando el protocolo SMTP.
+            $mail->isSMTP();
+            // Usamos el server SMTP de gmail porque recibimos los emails en nuestra cuenta de gmail.    
+            $mail->Host = 'smtp.gmail.com';
+            // Usar el server SMTP de gmail requiere autenticación.
+            $mail->SMTPAuth = true;
+            $mail->Username = $mail_recipient;
+            $mail->Password = '';   // Tu password de gmail.
+            $mail->SMTPSecure = 'tls';
+            $mail->Port = 587;
+
+            // AJUSTES EMAIL.
+            $mail->setFrom($email, $name);  // Sender.
+            $mail->addAddress($mail_recipient, 'Tu Nombre'); // Recipient.
+
+            // BODY Y SUBJECT DEL EMAIL.
+            $mail->isHTML(true);
+            $mail->Subject = $subject;
+            $mail->Body = nl2br($body);
+            $mail->AltBody = nl2br($body);  // Para mostrar el body en clientes email que no soportan html.
+
+            $mail->send();
+            // echo 'El mensaje fue enviado correctamente';
+
+            $message_sent = true;
+        } catch (Exception $e) {
+            // Mostrar logs en caso de error.
+            $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+            echo "El mensaje no ha podido ser enviado. Mailer Error: {$mail->ErrorInfo}";
+        }
     }
 }
 ?>
 
 <?php
+// Mostrar el html siguiente si el mensaje fue enviado correctamente.
 if ($message_sent) :
 ?>
 
@@ -69,11 +112,6 @@ if ($message_sent) :
         </div>
     </body>
     </html>
-
-<?php
-else :
-    readfile("index.html");
-?>
 
 <?php
 endif;

@@ -36,7 +36,7 @@
 .home-title {
   margin-top: 40px;
   margin-bottom: 30px;
-  font-size: 50px;
+  font-size: 3rem;
   line-height: 1.212em;
   font-weight: 700;
 }
@@ -46,7 +46,7 @@
 .contact-title {
   margin-top: 25px;
   margin-bottom: 25px;
-  font-size: 40px;
+  font-size: 2.5rem;
   line-height: 1.212em;
   font-weight: 700;
 }
