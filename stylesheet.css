@@ -1,3 +1,6 @@
+/* FUENTES TIPOGRAFÍAS. */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;800&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -8,6 +11,7 @@
   --text-color: #f8f8f2;
   --card-bg-color: #44475a;
   --footer-bg-color: rgba(0, 0, 0, 0.4);
+  --nunito-font: 'Nunito', sans-serif; 
 }
 
 /* TEMA COLOR */
@@ -16,8 +20,13 @@
   color: var(--text-color);
 }
 
-.container {
-  max-width: 100%;
+h3 , p, label {
+  font-family: var(--nunito-font);
+  font-weight: 400;
+}
+
+h3 {
+  letter-spacing: 0.01em;
 }
 
 .center {
@@ -25,20 +34,12 @@
   width: 100%;
 }
 
-.flex-center {
-  /* flex permite crear una columna o fila flexible en la interfaz.  */
-  display: flex;
-  justify-content: center;  /* Main Axis X */
-  align-items: center;  /* Cross Axis Y */
-  flex-direction: column;
-}
-
 .home-title {
   margin-top: 40px;
   margin-bottom: 30px;
-  font-size: 3rem;
+  font-family: var(--nunito-font);
+  font-weight: 800;
   line-height: 1.212em;
-  font-weight: 700;
 }
 
 .features-title,
@@ -46,9 +47,9 @@
 .contact-title {
   margin-top: 25px;
   margin-bottom: 25px;
-  font-size: 2.5rem;
+  font-family: var(--nunito-font);
+  font-weight: 800;
   line-height: 1.212em;
-  font-weight: 700;
 }
 
 img {
@@ -78,6 +79,7 @@ a:link{
 
 .footer-bg {
   background-color: var(--footer-bg-color);
+  font-family: var(--nunito-font);
 }
 
 /* BOTONES Y EFECTOS HOVER. */
