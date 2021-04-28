@@ -69,118 +69,165 @@
             </div>
         </div>
 
-        <!-- Imágenes. -->
-        <div class="row mt-3">
-            <section class="col-12 col-md-6 col-xl-3">
-                <div class="row">
-                    <a href="images/ayuda.jpg" target="_blank">
-                        <img src="images/ayuda.jpg" class="img-fluid">
-                    </a>
-                </div>
-            </section>
-            <section class="col-12 col-md-6 col-xl-3">
-                <div class="row">
-                    <a href="images/opiniones.jpg" target="_blank">
-                        <img src="images/opiniones.jpg" class="img-fluid">
-                    </a>
-                </div>
-            </section>
-            <section class="col-12 col-md-6 col-xl-3">
-                <div class="row">
-                    <a href="images/chat.png" target="_blank">
-                        <img src="images/chat.png" class="img-fluid">
-                    </a>
-                </div>
-            </section>
-            <section class="col-12 col-md-6 col-xl-3">
-                <div class="row">
-                    <a href="images/foro.png" target="_blank">
-                        <img src="images/foro.png" class="img-fluid">
-                    </a>
-                </div>
-            </section>
-        </div>
-
-        <!-- Cards Appstore y GitHub. -->
-        <div class="">
-            <h2 class="downloads-title">Descargas</h2>
-            <div class="row text-center">
-                <section class="col-12 col-md-6 p-2">
-                    <div class="custom-card">
-                        <div class="card-body">
-                            <h3 class="card-title font-weight-bold">IOS App</h3>
-                            <p class="card-text">Requiere versión IOS 11 o mayor.
-                            </p>
-                            <a href="https://www.apple.com/app-store/" target="_blank"
-                                class="btn-shrink btn-primary btn-block rounded-pill"><i class="fab fa-apple"></i> APP
-                                STORE</a>
-                        </div>
+        <!-- Imágenes vista grid para tablets y ordenadores. -->
+        <div class="container-tablet-desktop">
+            <h2 class="images-title">Imágenes</h2>
+            <div class="row mt-3">
+                <section class="col-md-6 col-xl-3">
+                    <div class="row">
+                        <a href="images/ayuda.jpg" target="_blank">
+                            <img src="images/ayuda.jpg" class="img-fluid">
+                        </a>
                     </div>
                 </section>
-                <section class="col-12 col-md-6 p-2">
-                    <div class="custom-card">
-                        <div class="card-body">
-                            <h3 class="card-title font-weight-bold">GitHub project</h3>
-                            <p class="card-text">Proyecto de código abierto y gratuito.
-                            </p>
-                            <a href="https://github.com/Spyrion/appopiniones-frontend" target="_blank"
-                                class="btn-shrink btn-primary btn-block rounded-pill"><i class="fab fa-github"></i>
-                                GITHUB</a>
-                        </div>
+                <section class="col-md-6 col-xl-3">
+                    <div class="row">
+                        <a href="images/opiniones.jpg" target="_blank">
+                            <img src="images/opiniones.jpg" class="img-fluid">
+                        </a>
+                    </div>
+                </section>
+                <section class="col-md-6 col-xl-3">
+                    <div class="row">
+                        <a href="images/chat.png" target="_blank">
+                            <img src="images/chat.png" class="img-fluid">
+                        </a>
+                    </div>
+                </section>
+                <section class="col-md-6 col-xl-3">
+                    <div class="row">
+                        <a href="images/foro.png" target="_blank">
+                            <img src="images/foro.png" class="img-fluid">
+                        </a>
                     </div>
                 </section>
             </div>
         </div>
 
-        <!-- Formulario Contacto -->
-        <div class="contact-form">
-            <h2 class="contact-title">Contacto</h2>
-            <div class="row">
-                <section class="col-12">
-                    <form method="post" action="contact-form.php">
-                        <div class="form-group">
-                            <label for="name">Nombre</label>
-                            <input type="text" class="form-control" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="lastName">Apellidos</label>
-                            <input type="text" class="form-control" id="lastName" name="lastName" required>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="email">Correo electrónico</label>
-                                <i class="far fa-envelope"></i>
-                                <input type="email" class="form-control" id="email" name="email"
-                                    placeholder="username@email.com" required>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="phoneNum">Número de teléfono (opcional)</label>
-                                <i class="fas fa-mobile-alt"></i>
-                                <input type="number" class="form-control" id="phoneNum" name="phoneNum">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Asunto</label>
-                            <input type="text" class="form-control" id="subject" name="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Mensaje <i class="far fa-comments"></i></label>
-                            <textarea type="text" id="message" name="message" rows="10" class="form-control"
-                                required></textarea>
-                        </div>
-                        <div class="form-group text-center">
-                            <button type="submit" class="btn-underline btn-primary rounded-lg">Enviar</button>
-                        </div>
-                    </form>
-                </section>
+        <!-- Caroussel de imágenes para vista móvil. -->
+        <div class="container-mobile">
+            <h2 class="images-title">Imágenes</h2>
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <a href="images/ayuda.jpg" target="_blank">
+                            <img class="d-block w-100" src="images/ayuda.jpg" alt="First slide">
+                        </a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="images/opiniones.jpg" target="_blank">
+                            <img class="d-block w-100" src="images/opiniones.jpg" alt="Second slide">
+                        </a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="images/chat.png" target="_blank">
+                            <img class="d-block w-100" src="images/chat.png" alt="Third slide">
+                        </a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="images/foro.png" target="_blank">
+                            <img class="d-block w-100" src="images/foro.png" alt="Fourth slide">
+                        </a>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
         </div>
-    </div>
 
-    <!-- Footer -->
-    <footer class="container-fluid text-center footer-bg">
-        <div class="text-center p-3">@ 2021 Copyright: Grubo B</div>
-    </footer>
+            <!-- Cards Appstore y GitHub. -->
+            <div class="">
+                <h2 class="downloads-title">Descargas</h2>
+                <div class="row text-center">
+                    <section class="col-12 col-md-6 p-2">
+                        <div class="custom-card">
+                            <div class="card-body">
+                                <h3 class="card-title font-weight-bold">IOS App</h3>
+                                <p class="card-text">Requiere versión IOS 11 o mayor.
+                                </p>
+                                <a href="https://www.apple.com/app-store/" target="_blank"
+                                    class="btn-shrink btn-primary btn-block rounded-pill"><i class="fab fa-apple"></i>
+                                    APP
+                                    STORE</a>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="col-12 col-md-6 p-2">
+                        <div class="custom-card">
+                            <div class="card-body">
+                                <h3 class="card-title font-weight-bold">GitHub project</h3>
+                                <p class="card-text">Proyecto de código abierto y gratuito.
+                                </p>
+                                <a href="https://github.com/Spyrion/appopiniones-frontend" target="_blank"
+                                    class="btn-shrink btn-primary btn-block rounded-pill"><i class="fab fa-github"></i>
+                                    GITHUB</a>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <!-- Formulario Contacto -->
+            <div class="contact-form">
+                <h2 class="contact-title">Contacto</h2>
+                <div class="row">
+                    <section class="col-12">
+                        <form method="post" action="contact-form.php">
+                            <div class="form-group">
+                                <label for="name">Nombre</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Apellidos</label>
+                                <input type="text" class="form-control" id="lastName" name="lastName" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="email">Correo electrónico</label>
+                                    <i class="far fa-envelope"></i>
+                                    <input type="email" class="form-control" id="email" name="email"
+                                        placeholder="username@email.com" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="phoneNum">Número de teléfono (opcional)</label>
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <input type="number" class="form-control" id="phoneNum" name="phoneNum">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Asunto</label>
+                                <input type="text" class="form-control" id="subject" name="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Mensaje <i class="far fa-comments"></i></label>
+                                <textarea type="text" id="message" name="message" rows="10" class="form-control"
+                                    required></textarea>
+                            </div>
+                            <div class="form-group text-center">
+                                <button type="submit" class="btn-underline btn-primary rounded-lg">Enviar</button>
+                            </div>
+                        </form>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="container-fluid text-center footer-bg">
+            <div class="text-center p-3">@ 2021 Copyright: Grubo B</div>
+        </footer>
 </body>
 
 </html>
