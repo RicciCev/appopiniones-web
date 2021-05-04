@@ -71,6 +71,7 @@ img {
   background-color: #716767 !important;
 }
 
+/* Cards AppStore y GitHub. */
 .custom-card {
   margin: 0 auto;
   background-color: var(--card-bg-color);
@@ -84,6 +85,12 @@ a:link{
 /* Color del texto input en el formulario. */
 .form-control {
 	color: #3d4144;
+}
+
+/* Anchura del color de los bordes cuando son validados. */
+.form-control.is-invalid, .was-validated .form-control:invalid,
+.form-control.is-valid, .was-validated .form-control:valid {
+  border-width: 2px;
 }
 
 .footer-bg {
@@ -100,7 +107,7 @@ a:link{
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   line-height: 1.5;
-  -webkit-transform: perspective(1px) translateZ(0);
+  -webkit-transform: perspective(1px) translateZ(0); /* Usamos -webkit para asegurar compatibilidad en el navegador Safari. */
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
   -webkit-transition-duration: 0.3s;
@@ -149,6 +156,42 @@ a:link{
 .btn-underline:active:before {
   left: 0;
   right: 0;
+}
+
+/* ANIMACIONES CUSTOM. */
+h1, h2 {
+  animation: titles-anim 400ms ease-in 400ms;
+  animation-fill-mode: forwards;
+  transform: translateY(-0.5em);
+  opacity: 0;
+}
+
+.fade-anim {
+  animation: fade-anim 300ms ease-in 600ms;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes titles-anim {
+  0% {
+    transform: translateY(-0.5em);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-anim {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 /* MEDIA QUERIES. */
