@@ -52,18 +52,24 @@ body.dark {
   margin-left: 0.5em !important;
 }
 
-.navbar-dark .navbar-nav .nav-link .navbar-text {
+/* Color de texto los elementos del navbar. */
+.navbar-dark,
+.navbar-nav,
+.nav-link,
+.custom-control label {
   color: rgba(255, 255, 255, 0.68) !important;
 }
 
-.nav-item:hover {
-  color: white;
-  box-shadow: 1px solid #282a36;
+/* Efecto hover de los elementos del navbar. */
+.navbar .nav-item:hover .nav-link {
+  color: white !important;
+  text-shadow: 1px 0 3px #007bff !important;
 }
 
 .dropdown-menu {
   background-color: var(--navbar-color) !important;
   border: 1px solid #fff !important;
+  margin: 0.125rem 0 1rem !important;
 }
 
 .dropdown-item {
