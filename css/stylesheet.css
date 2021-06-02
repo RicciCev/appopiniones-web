@@ -1,8 +1,12 @@
 /* FUENTES TIPOGRAFÍAS. */
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;800&display=swap");
 
 * {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 /* VARIABLES CSS */
@@ -11,7 +15,7 @@
   --text-color: #f8f8f2;
   --card-bg-color: #44475a;
   --footer-bg-color: rgba(0, 0, 0, 0.4);
-  --nunito-font: 'Nunito', sans-serif; 
+  --nunito-font: "Nunito", sans-serif;
 }
 
 /* TEMA COLOR */
@@ -20,7 +24,47 @@
   color: var(--text-color);
 }
 
-h3 , p, label {
+/* PROPIEDADES NAVBAR */
+.navbar {
+  margin-bottom: 1.5em !important;
+  background-color: var(--card-bg-color) !important;
+}
+
+.navbar-brand {
+  font-family: var(--nunito-font);
+  font-weight: 800;
+  line-height: 1.212em;
+}
+
+.nav-item {
+  margin-left: 0.5em !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.68) !important;
+}
+
+.nav-item:hover {
+  color: white;
+  box-shadow: 1px solid #282a36;
+}
+
+.dropdown-menu {
+  background-color: var(--card-bg-color) !important;
+  border: 1px solid #fff !important;
+}
+
+.dropdown-item {
+  color: whitesmoke !important;
+}
+
+.dropdown-item:hover {
+  background-color: var(--footer-bg-color) !important;
+}
+
+h3,
+p,
+label {
   font-family: var(--nunito-font);
   font-weight: 400;
 }
@@ -60,11 +104,11 @@ img {
 
 /* PROPIEDADES CAROUSEL (COLORES ICONOS). */
 .carousel-control-prev-icon {
-	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5L4.25 4l2.5-2.5L5.25 0z'/%3e%3c/svg%3e") !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5L4.25 4l2.5-2.5L5.25 0z'/%3e%3c/svg%3e") !important;
 }
 
 .carousel-control-next-icon {
-	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5L3.75 4l-2.5 2.5L2.75 8l4-4-4-4z'/%3e%3c/svg%3e") !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5L3.75 4l-2.5 2.5L2.75 8l4-4-4-4z'/%3e%3c/svg%3e") !important;
 }
 
 .carousel-indicators li {
@@ -78,18 +122,20 @@ img {
   border-radius: 2.5rem;
 }
 
-a:link{
-  text-decoration: none!important;
+a:link {
+  text-decoration: none !important;
 }
 
 /* Color del texto input en el formulario. */
 .form-control {
-	color: #3d4144;
+  color: #3d4144;
 }
 
 /* Anchura del color de los bordes cuando son validados. */
-.form-control.is-invalid, .was-validated .form-control:invalid,
-.form-control.is-valid, .was-validated .form-control:valid {
+.form-control.is-invalid,
+.was-validated .form-control:invalid,
+.form-control.is-valid,
+.was-validated .form-control:valid {
   border-width: 2px;
 }
 
@@ -159,7 +205,8 @@ a:link{
 }
 
 /* ANIMACIONES CUSTOM. */
-h1, h2 {
+h1,
+h2 {
   animation: titles-anim 400ms ease-in 400ms;
   animation-fill-mode: forwards;
   transform: translateY(-0.5em);

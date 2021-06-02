@@ -25,17 +25,53 @@
 
 <body class="site-bg">
 
+    <nav class="navbar sticky-top navbar-expand-lg navbar navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">AppOpiniones</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <a class="nav-link" href="#features-section">Funcionalidades <span
+                            class="sr-only">(current)</span></a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#images-section">Imágenes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#downloads-section">Descargas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact-section">Contacto</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Color tema
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">Blanco</a>
+                            <a class="dropdown-item" href="#">Oscuro</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <div class="container">
         <!-- Título principal y breve descripción. -->
         <header>
-            <h1 class="home-title">App Opiniones</h1>
+            <!-- <h1 class="home-title">App Opiniones</h1> -->
+
             <p class="lead fade-anim">Aplicación dirigida a todos aquellos usuarios que quieran discutir sobre cualquier
                 tipo de
                 tema, ya sea para opinar o simplemente recibir ayuda.</p>
         </header>
 
         <!-- Funcionalidades. -->
-        <div class="fade-anim">
+        <div class="fade-anim" id="features-section">
             <h2 class="features-title">Funcionalidades</h2>
             <div class="row text-center">
                 <section class="col-12 col-md-6 col-xl-3">
@@ -71,7 +107,7 @@
         </div>
 
         <!-- Imágenes vista grid para tablets y ordenadores. -->
-        <div class="container-tablet-desktop">
+        <div class="container-tablet-desktop" id="images-section">
             <h2 class="images-title">Imágenes</h2>
             <div class="row">
                 <section class="col-md-6 col-xl-3">
@@ -106,7 +142,7 @@
         </div>
 
         <!-- Caroussel de imágenes para vista móvil. -->
-        <div class="container-mobile">
+        <div class="container-mobile" id="images-section">
             <h2 class="images-title">Imágenes</h2>
             <div id="carouselExampleIndicators" class="fade-anim carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
@@ -149,7 +185,7 @@
         </div>
 
         <!-- Cards Appstore y GitHub. -->
-        <div class="fade-anim">
+        <div class="fade-anim" id="downloads-section">
             <h2 class="downloads-title">Descargas</h2>
             <div class="row text-center">
                 <section class="col-12 col-md-6 p-2">
@@ -181,7 +217,7 @@
         </div>
 
         <!-- Formulario Contacto -->
-        <div class="contact-form">
+        <div class="contact-form" id="contact-section">
             <h2 class="contact-title">Contacto</h2>
             <div class="row fade-anim">
                 <section class="col-12">
