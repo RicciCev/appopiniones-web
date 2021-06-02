@@ -9,25 +9,37 @@ html {
   scroll-behavior: smooth;
 }
 
-/* VARIABLES CSS */
-:root {
+/* VARIABLES CSS (Tema color por defecto) */
+body {
+  --bg-color: #fff;
+  --text-color: #212529;
+  --navbar-color: #44475a;
+  --card-bg-color: #979dbd2b;
+  --footer-bg-color: var(--card-bg-color);
+  --transition-delay: 1s;
+  --nunito-font: "Nunito", sans-serif;
+
+  transition: var(
+    --transition-delay
+  ); /* Duración de la animación al cambiar de tema. */
+
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+}
+
+/* TEMA OSCURO */
+body.dark {
+  /* Modificamos las variables para adaptar al tema oscuro. */
   --bg-color: #282a36;
   --text-color: #f8f8f2;
   --card-bg-color: #44475a;
   --footer-bg-color: rgba(0, 0, 0, 0.4);
-  --nunito-font: "Nunito", sans-serif;
-}
-
-/* TEMA COLOR */
-.site-bg {
-  background-color: var(--bg-color);
-  color: var(--text-color);
 }
 
 /* PROPIEDADES NAVBAR */
 .navbar {
   margin-bottom: 1.5em !important;
-  background-color: var(--card-bg-color) !important;
+  background-color: var(--navbar-color) !important;
 }
 
 .navbar-brand {
@@ -40,7 +52,7 @@ html {
   margin-left: 0.5em !important;
 }
 
-.navbar-dark .navbar-nav .nav-link {
+.navbar-dark .navbar-nav .nav-link .navbar-text {
   color: rgba(255, 255, 255, 0.68) !important;
 }
 
@@ -50,7 +62,7 @@ html {
 }
 
 .dropdown-menu {
-  background-color: var(--card-bg-color) !important;
+  background-color: var(--navbar-color) !important;
   border: 1px solid #fff !important;
 }
 
@@ -61,6 +73,12 @@ html {
 .dropdown-item:hover {
   background-color: var(--footer-bg-color) !important;
 }
+
+/* Alinear el botón switch con el resto de elementos del navbar. */
+.custom-control {
+  line-height: 7px;
+}
+/* PROPIEDADES NAVBAR END */
 
 h3,
 p,
@@ -76,14 +94,6 @@ h3 {
 .center {
   text-align: center;
   width: 100%;
-}
-
-.home-title {
-  margin-top: 1em;
-  margin-bottom: 0.75em;
-  font-family: var(--nunito-font);
-  font-weight: 800;
-  line-height: 1.212em;
 }
 
 .features-title,
@@ -126,6 +136,7 @@ a:link {
   text-decoration: none !important;
 }
 
+/* PROPIEDADES FORMULARIO */
 /* Color del texto input en el formulario. */
 .form-control {
   color: #3d4144;
