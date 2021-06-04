@@ -282,15 +282,23 @@ h2 {
 
 /* MEDIA QUERIES. */
 /* Ocultar caroussel y mostrar grid a partir de 768px porque ya se considera vista tablet. */
-@media (min-width: 960px) {
+@media (min-width: 768px) {
   .container-mobile {
     display: none;
+  }
+
+  .container-tablet-desktop {
+    display: block;
   }
 }
 
 /* Ocultar grid y mostrar caroussel cuando la anchura es de tamanño móvil. */
-@media (max-width: 960px) {
+@media (max-width: 768px) {
   .container-tablet-desktop {
     display: none;
+  }
+
+  .container-mobile {
+    display: block;
   }
 }
